@@ -593,3 +593,14 @@ body{background:#f7f7f4!important;color:#111!important}
  .about{padding-top:58px!important}
  .faq{padding-top:48px!important;padding-bottom:72px!important}
 }
+
+/* More breathing room for the final yellow manifesto block */
+.aboutFinal{padding:120px clamp(56px,5.5vw,110px) 96px!important;column-gap:10vw!important;align-items:center!important}
+.aboutFinal>p{max-width:420px!important;margin:0!important;align-self:center!important}
+.aboutFinal h2{padding-top:10px}
+.aboutFinal button{margin-top:68px!important;width:min(520px,100%)!important}
+@media(max-width:900px){
+ .aboutFinal{padding:72px 28px 68px!important;gap:36px!important}
+ .aboutFinal>p{max-width:100%!important}
+ .aboutFinal button{margin-top:32px!important}
+}
