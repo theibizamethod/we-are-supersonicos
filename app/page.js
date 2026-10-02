@@ -69,8 +69,16 @@ export default function Home(){
     gestureSettingsTouch:{pinchToZoom:true,dragToPan:true}
    });
    viewer.current=v;
-   v.addHandler("open",()=>setZoom(v.viewport.getZoom(true)));
-   v.addHandler("zoom",()=>setZoom(v.viewport.getZoom(true)));
+   const syncNavigation=()=>{
+    const z=v.viewport.getZoom(true),home=v.viewport.getHomeZoom();
+    const canPan=z>home*1.03;
+    v.gestureSettingsMouse.dragToPan=canPan;
+    v.gestureSettingsTouch.dragToPan=canPan;
+    if(!canPan)v.viewport.panTo(v.viewport.getHomeBounds().getCenter(),true);
+    setZoom(z);
+   };
+   v.addHandler("open",()=>{v.viewport.goHome(true);syncNavigation();});
+   v.addHandler("zoom",syncNavigation);
   })();
   return()=>{alive=false;viewer.current?.destroy();viewer.current=null;if(previewUrl.current)URL.revokeObjectURL(previewUrl.current)};
  },[]);
