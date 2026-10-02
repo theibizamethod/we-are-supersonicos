@@ -487,3 +487,6 @@
 .counter{background:rgba(10,10,10,.72);border-color:rgba(255,212,0,.34);color:#f5f5f2;box-shadow:0 14px 50px rgba(0,0,0,.28)}
 .counter i{background:rgba(255,212,0,.24)}
 .zoom{background:rgba(245,245,242,.94)}
+
+/* SUPERSONICOS viewer hard reset */
+.viewport.osdViewport,.deepViewer,.deepViewer>div,.deepViewer .openseadragon-container,.deepViewer canvas{background:#000!important}
