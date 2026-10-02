@@ -63,8 +63,8 @@ export default function Home(){
     showNavigationControl:false,showNavigator:false,
     animationTime:.55,blendTime:.12,
     zoomPerClick:1.35,zoomPerScroll:1.16,
-    minZoomImageRatio:1,maxZoomPixelRatio:64,
-    visibilityRatio:1,constrainDuringPan:true,homeFillsViewer:true,
+    minZoomImageRatio:.78,maxZoomPixelRatio:64,
+    visibilityRatio:.65,constrainDuringPan:true,homeFillsViewer:false,
     gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:true,dragToPan:true,scrollToZoom:true},
     gestureSettingsTouch:{pinchToZoom:true,dragToPan:true}
    });
