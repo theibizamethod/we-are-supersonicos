@@ -3,21 +3,21 @@ import Script from "next/script";
 import CookieConsent from "./cookie-consent";
 
 export const metadata={
- metadataBase:new URL("https://ibizaiwashere.com"),
- title:"IBIZA I WAS HERE",
- description:"One million memories. One image of Ibiza.",
+ metadataBase:new URL("https://supersonicos.ibizasonica.com"),
+ title:"WE ARE SUPERSONICOS",
+ description:"20 years. 20,000 memories. One sound.",
  openGraph:{
-  title:"IBIZA I WAS HERE",
-  description:"One million memories. One image of Ibiza.",
-  url:"https://ibizaiwashere.com",
-  siteName:"IBIZA I WAS HERE",
+  title:"WE ARE SUPERSONICOS",
+  description:"20 years. 20,000 memories. One sound.",
+  url:"https://supersonicos.ibizasonica.com",
+  siteName:"WE ARE SUPERSONICOS",
   type:"website",
-  images:[{url:"/opengraph-image",width:1200,height:630,alt:"IBIZA I WAS HERE"}]
+  images:[{url:"/opengraph-image",width:1200,height:630,alt:"WE ARE SUPERSONICOS"}]
  },
  twitter:{
   card:"summary_large_image",
-  title:"IBIZA I WAS HERE",
-  description:"One million memories. One image of Ibiza.",
+  title:"WE ARE SUPERSONICOS",
+  description:"20 years. 20,000 memories. One sound.",
   images:["/opengraph-image"]
  }
 };
