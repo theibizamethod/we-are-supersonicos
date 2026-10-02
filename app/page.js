@@ -2,8 +2,8 @@
 import {useEffect,useRef,useState} from "react";
 import {createPortal} from "react-dom";
 import {formatMemoryNumber} from "../lib/memory-engine";
-const SUPABASE_URL="https://yiflmsubkrlwhweenvca.supabase.co";
-const SUPABASE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpZmxtc3Via3Jsd2h3ZWVudmNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA3NjE0NTUsImV4cCI6MjEwNjMzNzQ1NX0.sPbEvNX6-MDM42NLM1V-S3xtBm-lFdWHkRhQ2sH0qtY";
+const SUPABASE_URL=""; // isolated until SUPERSONICOS Supabase is connected
+const SUPABASE_KEY=""; // isolated until SUPERSONICOS Supabase is connected
 const MASTER="https://unsplash.com/photos/08oKMbKQrD4/download?force=true&w=6000";
 export default function Home(){
  const viewerEl=useRef(null), viewer=useRef(null), previewUrl=useRef(null);
@@ -165,14 +165,14 @@ export default function Home(){
   </section>
   <section className="about" id="about">
    <div className="aboutEyebrow">ABOUT THE ARTWORK</div>
-   <div className="aboutHero"><div><h2>IBIZA<br/>I AM SUPERSONICO.</h2><span className="aboutLine">A COLLECTIVE DIGITAL ARTWORK.</span></div><p>Built from 20,000 real memories from the Ibiza Sonica community of the island. One photograph at a time, the people who were here become part of the image itself.</p></div>
+   <div className="aboutHero"><div><h2>WE ARE<br/>SUPERSONICOS.</h2><span className="aboutLine">IBIZA SONICA · 20 YEARS</span></div><p>Twenty years of Ibiza Sonica, told through the people who listened, danced, broadcast, travelled and lived with us. 20,000 real memories becoming one collective image.</p></div>
    <div className="aboutGrid">
-    <article><span>01</span><h3>CHOOSE A MEMORY.</h3><p>One photograph from a moment you lived in Ibiza. Yesterday or decades ago. You choose the memory that stays.</p></article>
-    <article><span>02</span><h3>FIND YOUR PLACE.</h3><p>For €1, your photograph receives one equal position in the artwork. Every memory has the same space. Every person enters on equal terms.</p></article>
-    <article><span>03</span><h3>BECOME PART OF THE IMAGE.</h3><p>Step back and you see Ibiza. Move closer and the image opens into the people, years and moments that made it.</p></article>
-    <article><span>04</span><h3>COMPLETE THE ARTWORK.</h3><p>Memory by memory, the original image gives way to the people inside it. The work is complete when Memory #20,000 finds its place.</p></article>
+    <article><span>01</span><h3>CHOOSE A MEMORY.</h3><p>One photograph from a moment that connects you to Ibiza Sonica. A broadcast, a party, a journey, a song, a place or a moment you still remember.</p></article>
+    <article><span>02</span><h3>FIND YOUR PLACE.</h3><p>For €1, your photograph receives one equal position in the artwork. Every SUPERSONICO has the same space. No premium positions. No hierarchy.</p></article>
+    <article><span>03</span><h3>BECOME PART OF THE IMAGE.</h3><p>Step back and you see one image of Ibiza Sonica. Move closer and it opens into the people, years and moments that made twenty years of sound.</p></article>
+    <article><span>04</span><h3>COMPLETE THE ARTWORK.</h3><p>Memory by memory, the image gives way to the community inside it. The artwork is complete when Memory #20,000 finds its place.</p></article>
    </div>
-   <div className="aboutFinal"><p>A living archive of the people who passed through Ibiza, built memory by memory.</p><h2>EVERY MEMORY<br/>FINDS ITS PLACE.</h2><button onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></div>
+   <div className="aboutFinal"><p>A living archive of the people who made Ibiza Sonica part of their lives.</p><h2>20 YEARS.<br/>20,000 MEMORIES.<br/>ONE SOUND.</h2><button onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></div>
    <section className="participationRules" id="participation-rules">
     <div className="rulesHead"><span>BEFORE YOU TAKE PART</span><h2>PARTICIPATION<br/>RULES.</h2><p>WE ARE SUPERSONICOS is built from real memories shared by real people. These rules protect the artwork and everyone who becomes part of it.</p></div>
     <div className="rulesGrid">
