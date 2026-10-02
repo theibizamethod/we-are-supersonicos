@@ -490,3 +490,66 @@
 
 /* SUPERSONICOS viewer hard reset */
 .viewport.osdViewport,.deepViewer,.deepViewer>div,.deepViewer .openseadragon-container,.deepViewer canvas{background:#000!important}
+
+
+/* SUPERSONICOS full visual system */
+:root{
+ --sonica-yellow:#ffd400;
+ --sonica-black:#050505;
+ --sonica-charcoal:#171717;
+ --sonica-grey:#8c8c86;
+ --sonica-light:#e9e9e4;
+ --sonica-white:#f7f7f4;
+}
+body{background:var(--sonica-black);color:var(--sonica-white)}
+.about{background:var(--sonica-white)!important;color:var(--sonica-black)!important}
+.aboutEyebrow{color:#666!important;font-size:11px!important;letter-spacing:1.8px!important}
+.aboutHero p{color:#555!important;font-size:clamp(16px,1.25vw,20px)!important;line-height:1.55!important}
+.aboutLine{color:#666!important;font-size:11px!important;letter-spacing:1.7px!important}
+.aboutGrid{border-color:#cfcfca!important}
+.aboutGrid article{border-color:#d7d7d2!important}
+.aboutGrid article>span{color:#777!important;font-size:11px!important}
+.aboutGrid h3{color:#111!important;font-size:clamp(16px,1.2vw,20px)!important}
+.aboutGrid p{color:#555!important;font-size:14px!important;line-height:1.6!important}
+.aboutFinal{background:var(--sonica-yellow)!important;color:var(--sonica-black)!important}
+.aboutFinal p{color:#343434!important;font-size:15px!important}
+.aboutFinal button{background:var(--sonica-black)!important;color:var(--sonica-yellow)!important;border-color:var(--sonica-black)!important}
+.participationRules{background:#151515!important;color:var(--sonica-white)!important;border-top-color:#303030!important}
+.rulesHead{border-bottom-color:#363636!important}
+.rulesHead>span,.rulesHead p{color:#aaa!important}
+.rulesHead>span{font-size:11px!important}
+.rulesHead p{font-size:15px!important}
+.rulesGrid{border-bottom-color:#363636!important}
+.rulesGrid article,.rulesGrid article:nth-child(odd){border-color:#303030!important}
+.rulesGrid article>span{color:var(--sonica-yellow)!important;font-size:10px!important}
+.rulesGrid h3{color:var(--sonica-white)!important;font-size:15px!important}
+.rulesGrid p{color:#bdbdb8!important;font-size:14px!important;line-height:1.6!important}
+.rulesLegal{color:#aaa!important;font-size:12px!important}
+.faq{background:var(--sonica-white)!important;color:var(--sonica-black)!important}
+.faqHead>span{color:#666!important;font-size:11px!important}
+.faqItem,.faqItem:last-child{border-color:#c9c9c4!important}
+.faqItem>button{color:#111!important;font-size:14px!important}
+.faqAnswer p{color:#555!important;font-size:15px!important;line-height:1.65!important}
+footer,.siteFooter{background:var(--sonica-black)!important;color:#aaa!important;border-top-color:#292929!important}
+footer span,.legalNav a{font-size:10px!important;letter-spacing:1.1px!important}
+.legalNav a:hover{color:var(--sonica-yellow)!important}
+.legalPage{background:var(--sonica-black)!important;color:var(--sonica-white)!important}
+.legalBack{color:var(--sonica-yellow)!important;font-size:12px!important}
+.legalIntro{color:#aaa!important}
+.legalPage section{border-top-color:#333!important}
+.legalPage section h2{color:var(--sonica-yellow)!important;font-size:17px!important}
+.legalPage section p{color:#c8c8c3!important;font-size:15px!important}
+.legalPage a{color:var(--sonica-yellow)!important}
+.cookieBanner{background:#151515!important;color:var(--sonica-white)!important;border-color:#3b3b3b!important}
+.cookieBanner p{color:#bbb!important;font-size:14px!important}
+.cookieBanner a{color:var(--sonica-yellow)!important}
+.cookieActions button{border-color:var(--sonica-yellow)!important;color:var(--sonica-yellow)!important}
+.cookieActions button:last-child{background:var(--sonica-yellow)!important;color:var(--sonica-black)!important}
+.cookieSettingsBtn{color:#aaa!important;font-size:10px!important}
+.modal{background:rgba(0,0,0,.76)!important}
+.card{background:var(--sonica-white)!important;color:var(--sonica-black)!important}
+.card .continue{background:var(--sonica-yellow)!important;color:var(--sonica-black)!important}
+@media(max-width:760px){
+ .aboutGrid p,.rulesGrid p,.faqAnswer p{font-size:14px!important}
+ .siteFooter span,.legalNav a{font-size:10px!important}
+}
