@@ -604,3 +604,16 @@ body{background:#f7f7f4!important;color:#111!important}
  .aboutFinal>p{max-width:100%!important}
  .aboutFinal button{margin-top:32px!important}
 }
+
+
+/* SUPERSONICOS editorial rhythm */
+.rulesHead h2{letter-spacing:0!important;word-spacing:.08em!important}
+.rulesGrid article:nth-child(4n+2),.rulesGrid article:nth-child(4n+3){background:#efefeb!important}
+.rulesGrid article{transition:background .2s ease}
+.faqItem:nth-child(even){background:#efefeb!important}
+.faqItem>button{padding-left:18px!important;padding-right:18px!important}
+.faqAnswer{padding-left:18px!important;padding-right:18px!important}
+@media(max-width:760px){
+ .rulesGrid article:nth-child(even){background:#efefeb!important}
+ .rulesGrid article:nth-child(odd){background:#f7f7f4!important}
+}
