@@ -4,7 +4,7 @@ import {createPortal} from "react-dom";
 import {formatMemoryNumber} from "../lib/memory-engine";
 const SUPABASE_URL=""; // isolated until SUPERSONICOS Supabase is connected
 const SUPABASE_KEY=""; // isolated until SUPERSONICOS Supabase is connected
-const MASTER="/sonica-master.svg";
+const MASTER="/sonica_master.png";
 export default function Home(){
  const viewerEl=useRef(null), viewer=useRef(null), previewUrl=useRef(null);
  const [intro,setIntro]=useState(true),[selected,setSelected]=useState(null),[open,setOpen]=useState(false),[zoom,setZoom]=useState(1),[faqOpen,setFaqOpen]=useState(null);
