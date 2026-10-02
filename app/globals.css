@@ -620,3 +620,7 @@ body{background:#f7f7f4!important;color:#111!important}
 
 /* Overview title: slightly smaller so it clears the master artwork */
 .intro h1{font-size:clamp(44px,4.15vw,70px)}
+
+.languageToggle{position:fixed;z-index:100;right:18px;bottom:18px;display:flex;align-items:center;gap:6px;background:#080808;border:1px solid #333;border-radius:18px;padding:7px 10px;color:#777;font:700 9px/1 Arial,sans-serif;letter-spacing:1px}
+.languageToggle button{appearance:none;border:0;background:transparent;color:#777;font:700 9px/1 Arial,sans-serif;letter-spacing:1px;padding:0;cursor:pointer}
+.languageToggle button.active{color:#ffd400}
