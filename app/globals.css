@@ -553,3 +553,43 @@ footer span,.legalNav a{font-size:10px!important;letter-spacing:1.1px!important}
  .aboutGrid p,.rulesGrid p,.faqAnswer p{font-size:14px!important}
  .siteFooter span,.legalNav a{font-size:10px!important}
 }
+
+
+/* SUPERSONICOS light editorial system — readability first */
+body{background:#f7f7f4!important;color:#111!important}
+.about,.participationRules,.faq{background:#f7f7f4!important;color:#111!important}
+.about{padding-top:88px!important}
+.aboutHero{color:#111!important}
+.aboutHero h2{color:#111!important}
+.aboutHero p,.aboutGrid p,.rulesHead p,.rulesGrid p,.rulesLegal,.faqAnswer p{color:#555!important}
+.aboutEyebrow,.aboutLine,.rulesHead>span,.faqHead>span{color:#666!important}
+.aboutGrid,.rulesHead,.rulesGrid,.faqItem,.faqItem:last-child{border-color:#d4d4cf!important}
+.aboutGrid article,.rulesGrid article,.rulesGrid article:nth-child(odd){border-color:#deded9!important}
+.aboutGrid h3,.rulesGrid h3,.faqItem>button,.rulesHead h2,.faqHead h2{color:#111!important}
+.aboutGrid article>span{color:#777!important}
+.rulesGrid article>span{color:#9a8200!important}
+.participationRules{border-top:1px solid #d4d4cf!important}
+.aboutFinal{background:#ffd400!important;color:#050505!important}
+.aboutFinal p,.aboutFinal h2{color:#050505!important}
+.aboutFinal button{background:#050505!important;color:#ffd400!important;border-color:#050505!important}
+.faq{padding-top:70px!important;padding-bottom:100px!important}
+.faqHead{color:#111!important}
+.legalPage{background:#f7f7f4!important;color:#111!important}
+.legalBack{color:#111!important}
+.legalIntro,.legalPage section p{color:#555!important}
+.legalPage section{border-top-color:#d4d4cf!important}
+.legalPage section h2{color:#111!important}
+.legalPage a{color:#111!important;text-decoration:underline}
+.siteFooter{background:#f7f7f4!important;color:#555!important;border-top:1px solid #d4d4cf!important}
+.legalNav a{color:#555!important}
+.legalNav a:hover{color:#111!important}
+.cookieSettingsBtn{color:#666!important}
+.cookieBanner{background:#f7f7f4!important;color:#111!important;border-color:#d4d4cf!important}
+.cookieBanner p{color:#555!important}
+.cookieBanner a{color:#111!important}
+.cookieActions button{border-color:#111!important;color:#111!important}
+.cookieActions button:last-child{background:#ffd400!important;color:#050505!important;border-color:#ffd400!important}
+@media(max-width:760px){
+ .about{padding-top:58px!important}
+ .faq{padding-top:48px!important;padding-bottom:72px!important}
+}
