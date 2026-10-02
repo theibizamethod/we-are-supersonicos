@@ -65,20 +65,32 @@ export default function Home(){
     zoomPerClick:1.35,zoomPerScroll:1.16,
     minZoomImageRatio:.78,maxZoomPixelRatio:64,
     visibilityRatio:.65,constrainDuringPan:true,homeFillsViewer:false,
-    gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:true,dragToPan:true,scrollToZoom:true},
-    gestureSettingsTouch:{pinchToZoom:true,dragToPan:true}
+    gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:true,dragToPan:false,scrollToZoom:true},
+    gestureSettingsTouch:{pinchToZoom:true,dragToPan:false}
    });
    viewer.current=v;
+   let baseZoom=null;
    const syncNavigation=()=>{
-    const z=v.viewport.getZoom(true),home=v.viewport.getHomeZoom();
-    const canPan=z>home*1.03;
+    const z=v.viewport.getZoom(true);
+    if(baseZoom===null)baseZoom=z;
+    const canPan=z>baseZoom*1.12;
     v.gestureSettingsMouse.dragToPan=canPan;
     v.gestureSettingsTouch.dragToPan=canPan;
     if(!canPan)v.viewport.panTo(v.viewport.getHomeBounds().getCenter(),true);
     setZoom(z);
    };
-   v.addHandler("open",()=>{v.viewport.goHome(true);syncNavigation();});
+   v.addHandler("open",()=>{
+    v.viewport.goHome(true);
+    baseZoom=v.viewport.getZoom(true);
+    v.gestureSettingsMouse.dragToPan=false;
+    v.gestureSettingsTouch.dragToPan=false;
+    setZoom(baseZoom);
+   });
    v.addHandler("zoom",syncNavigation);
+   v.addHandler("canvas-drag",()=>{
+    const z=v.viewport.getZoom(true);
+    if(baseZoom!==null&&z<=baseZoom*1.12)v.viewport.panTo(v.viewport.getHomeBounds().getCenter(),true);
+   });
   })();
   return()=>{alive=false;viewer.current?.destroy();viewer.current=null;if(previewUrl.current)URL.revokeObjectURL(previewUrl.current)};
  },[]);
