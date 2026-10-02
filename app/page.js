@@ -65,14 +65,16 @@ export default function Home(){
     zoomPerClick:1.35,zoomPerScroll:1.16,
     minZoomImageRatio:.78,maxZoomPixelRatio:64,
     visibilityRatio:.65,constrainDuringPan:true,homeFillsViewer:false,
-    gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:true,dragToPan:false,scrollToZoom:true},
-    gestureSettingsTouch:{pinchToZoom:true,dragToPan:false}
+    gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:false,dragToPan:false,scrollToZoom:false},
+    gestureSettingsTouch:{pinchToZoom:false,dragToPan:false}
    });
    viewer.current=v;
    // OpenSeadragon also exposes its MouseTracker. Disable drag at tracker level
    // so trackpad/mouse cannot pan the master, while wheel/pinch zoom still work.
-   if(v.innerTracker){v.innerTracker.dragHandler=null;v.innerTracker.dragEndHandler=null;}
+   if(v.innerTracker){v.innerTracker.dragHandler=null;v.innerTracker.dragEndHandler=null;v.innerTracker.scrollHandler=null;v.innerTracker.dblClickHandler=null;}
    v.addHandler("canvas-drag",e=>{e.preventDefaultAction=true;});
+   v.addHandler("canvas-scroll",e=>{e.preventDefaultAction=true;});
+   v.addHandler("canvas-double-click",e=>{e.preventDefaultAction=true;});
    v.addHandler("open",()=>{
     v.viewport.goHome(true);
     v.gestureSettingsMouse.dragToPan=false;
