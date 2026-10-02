@@ -479,3 +479,11 @@
  .mobileMenu{background:var(--sonica-black);border-color:#242424}
  .mobileMenu button{color:var(--sonica-white);border-color:#242424}
 }
+
+/* SUPERSONICOS hero canvas: the master artwork floats on one continuous black field */
+.hero,.viewer,.viewerEl,.openseadragon-container{background:#000!important}
+.intro{background:linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.84) 62%,rgba(0,0,0,0) 100%)!important;color:#f5f5f2}
+.intro>p,.intro h1,.intro h2,.enter{color:#f5f5f2}
+.counter{background:rgba(10,10,10,.72);border-color:rgba(255,212,0,.34);color:#f5f5f2;box-shadow:0 14px 50px rgba(0,0,0,.28)}
+.counter i{background:rgba(255,212,0,.24)}
+.zoom{background:rgba(245,245,242,.94)}
