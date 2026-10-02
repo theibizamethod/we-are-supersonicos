@@ -617,3 +617,6 @@ body{background:#f7f7f4!important;color:#111!important}
  .rulesGrid article:nth-child(even){background:#efefeb!important}
  .rulesGrid article:nth-child(odd){background:#f7f7f4!important}
 }
+
+/* Overview title: slightly smaller so it clears the master artwork */
+.intro h1{font-size:clamp(44px,4.15vw,70px)}
