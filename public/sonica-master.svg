@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="3000" viewBox="0 0 3000 3000">
-<rect width="3000" height="3000" fill="#080808"/>
-<rect x="180" y="180" width="2640" height="2640" rx="24" fill="#ffd400"/>
-<text x="1500" y="1120" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="1040" font-weight="900" fill="#080808">20</text>
-<text x="1500" y="1770" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="260" font-weight="900" letter-spacing="12" fill="#080808">IBIZA SONICA</text>
-<text x="1500" y="2080" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="105" font-weight="700" letter-spacing="28" fill="#080808">RADIO</text>
-<text x="1500" y="2500" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="82" font-weight="700" letter-spacing="18" fill="#080808">20 YEARS</text>
-</svg>
