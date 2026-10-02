@@ -458,3 +458,24 @@
  .cookieBanner{left:12px;right:12px;bottom:12px;display:block;padding:20px}
  .cookieActions{margin-top:18px;min-width:0}
 }
+
+
+/* WE ARE SUPERSONICOS identity */
+:root{--sonica-yellow:#ffd400;--sonica-black:#080808;--sonica-white:#f5f5f2}
+.topbar{background:var(--sonica-black);color:var(--sonica-white);border-bottom-color:#242424}
+.brandLogo{color:var(--sonica-yellow)}
+.brandLogo strong{font-size:13px;line-height:1;letter-spacing:2.2px;font-weight:700}
+.brandLogo span{font-size:22px;line-height:.9;letter-spacing:-.5px;font-weight:800;margin-top:5px}
+.progress b,.progress span,.topbar nav button,.mobileMenuBtn{color:var(--sonica-white)}
+.topbar .add,.mobileNav .add{background:var(--sonica-yellow)!important;color:var(--sonica-black)!important}
+.intro>p,.aboutEyebrow,.aboutLine{color:#706f69}
+.intro h1{letter-spacing:-3.5px}
+.enter{border-color:#101722}
+.memoryActionsBand button{background:var(--sonica-yellow);color:var(--sonica-black)}
+.aboutFinal button{background:var(--sonica-yellow);color:var(--sonica-black);border-color:var(--sonica-yellow)}
+@media(max-width:760px){
+ .brandLogo strong{font-size:9px;letter-spacing:1.8px}
+ .brandLogo span{font-size:17px;letter-spacing:-.25px;margin-top:4px}
+ .mobileMenu{background:var(--sonica-black);border-color:#242424}
+ .mobileMenu button{color:var(--sonica-white);border-color:#242424}
+}
