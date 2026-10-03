@@ -9,7 +9,7 @@ export default function Home(){
  const viewerEl=useRef(null), viewer=useRef(null), previewUrl=useRef(null);
  const [intro,setIntro]=useState(true),[selected,setSelected]=useState(null),[open,setOpen]=useState(false),[zoom,setZoom]=useState(1),[faqOpen,setFaqOpen]=useState(null);
  const [file,setFile]=useState(null),[preview,setPreview]=useState(null),[name,setName]=useState(""),[year,setYear]=useState(""),[result,setResult]=useState(null),[error,setError]=useState(""),[saving,setSaving]=useState(false),[photoFocus,setPhotoFocus]=useState(null);
- const [memories,setMemories]=useState([]),[passport,setPassport]=useState(null),[checkout,setCheckout]=useState(false),[mobileMenu,setMobileMenu]=useState(false),[rulesAccepted,setRulesAccepted]=useState(false);
+ const [memories,setMemories]=useState([]),[passport,setPassport]=useState(null),[checkout,setCheckout]=useState(false),[mobileMenu,setMobileMenu]=useState(false),[rulesAccepted,setRulesAccepted]=useState(false),[lang,setLang]=useState("en");
  const liveOverlays=useRef(new Map()),pendingSlug=useRef(null);
  useEffect(()=>{
   if(typeof window!=="undefined"){
@@ -163,7 +163,7 @@ export default function Home(){
   }catch(e){}
  };
  return <main className="app">
-  <header className="topbar"><button className="brand brandLogo" onClick={home} aria-label="WE ARE SUPERSONICOS home"><strong>WE ARE</strong><span>SUPERSONICOS</span></button><div className="progress"><b>{memories.length.toLocaleString("en-US")}</b><span>/ 20,000 MEMORIES</span></div><nav><div className="languageSelector languageToggleStyle" aria-label="Language selector"><button className="active">EN</button><span>/</span><button>ES</button></div><button onClick={home}>OVERVIEW</button><button onClick={showAbout}>ABOUT</button>{memories.length>0&&<button onClick={()=>openMemoryUrl(memories[memories.length-1])}>FIND MY MEMORY</button>}<button className="add" onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></nav>
+  <header className="topbar"><button className="brand brandLogo" onClick={home} aria-label="WE ARE SUPERSONICOS home"><strong>WE ARE</strong><span>SUPERSONICOS</span></button><div className="progress"><b>{memories.length.toLocaleString("en-US")}</b><span>/ 20,000 MEMORIES</span></div><nav><div className="languageSelector languageToggleStyle" aria-label="Language selector"><button className={lang==="es"?"active":""} onClick={()=>setLang("es")}>.ES</button><span> </span><button className={lang==="en"?"active":""} onClick={()=>setLang("en")}>.EN</button></div><button onClick={home}>OVERVIEW</button><button onClick={showAbout}>ABOUT</button>{memories.length>0&&<button onClick={()=>openMemoryUrl(memories[memories.length-1])}>FIND MY MEMORY</button>}<button className="add" onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></nav>
    <div className="mobileNav"><button className="add" onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></div>
    {mobileMenu&&<div className="mobileMenu"><button onClick={()=>{setMobileMenu(false);home()}}>OVERVIEW</button><button onClick={()=>{setMobileMenu(false);showAbout()}}>ABOUT</button>{memories.length>0&&<button onClick={()=>{setMobileMenu(false);openMemoryUrl(memories[memories.length-1])}}>FIND MY MEMORY</button>}</div>}</header>
   <section className="viewport osdViewport" onPointerDown={dismissIntro}>
