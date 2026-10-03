@@ -630,3 +630,9 @@ body{background:#f7f7f4!important;color:#111!important}
 .languageSelector button.active{opacity:1}
 .languageSelector span{opacity:.3}
 .mobileLanguageSelector{color:var(--sonica-white)}
+
+/* Single top language selector, using the approved floating selector visual language */
+.languageToggleStyle{background:#080808;border:1px solid #333;border-radius:18px;padding:7px 10px;color:#777;font:700 9px/1 Arial,sans-serif;letter-spacing:1px}
+.languageToggleStyle button{color:#777!important;opacity:1!important;font:700 9px/1 Arial,sans-serif!important;letter-spacing:1px!important}
+.languageToggleStyle button.active{color:#ffd400!important}
+.languageToggleStyle span{color:#777;opacity:1}
