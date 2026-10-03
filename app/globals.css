@@ -636,3 +636,6 @@ body{background:#f7f7f4!important;color:#111!important}
 .languageToggleStyle button{color:#777!important;opacity:1!important;font:700 9px/1 Arial,sans-serif!important;letter-spacing:1px!important}
 .languageToggleStyle button.active{color:#ffd400!important}
 .languageToggleStyle span{color:#777;opacity:1}
+
+/* Remove legacy floating language selector. Header selector remains. */
+.languageToggle{display:none!important}
