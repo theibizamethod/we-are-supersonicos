@@ -1,7 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
 import CookieConsent from "./cookie-consent";
-import LanguageToggle from "./language-toggle";
 
 export const metadata={
  metadataBase:new URL("https://supersonicos.ibizasonica.com"),
@@ -26,7 +25,6 @@ export const metadata={
 export default function RootLayout({children}){
  return <html lang="en">
   <body>
-   <LanguageToggle/>
    {children}
    <CookieConsent/>
   </body>
