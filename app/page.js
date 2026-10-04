@@ -38,13 +38,17 @@ export default function Home(){
  const EN=Object.fromEntries(Object.entries(ES).map(([en,es])=>[es,en]));
  const t=s=>lang==="es"?(ES[s]||s):s;
  useEffect(()=>{
-  if(typeof document==="undefined")return;
-  document.documentElement.lang=lang;
-  const map=lang==="es"?ES:EN;
-  const walker=document.createTreeWalker(document.querySelector("main.app"),NodeFilter.SHOW_TEXT);
-  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
-  nodes.forEach(node=>{const raw=node.nodeValue,trim=raw.trim();if(map[trim])node.nodeValue=raw.replace(trim,map[trim]);});
- },[lang]);
+  if(typeof window==="undefined")return;
+  const saved=localStorage.getItem("supersonicos-lang")||"en";
+  setLang(saved);
+ },[]);
+ const setLanguage=next=>{
+  setLang(next);
+  if(typeof window!=="undefined"){
+   localStorage.setItem("supersonicos-lang",next);
+   window.dispatchEvent(new CustomEvent("supersonicos-language",{detail:next}));
+  }
+ };
  const liveOverlays=useRef(new Map()),pendingSlug=useRef(null);
  useEffect(()=>{
   if(typeof window!=="undefined"){
@@ -96,6 +100,7 @@ export default function Home(){
     element:viewerEl.current,
     tileSources:{type:"image",url:MASTER,buildPyramid:true},
     showNavigationControl:false,showNavigator:false,
+    mouseNavEnabled:false,
     animationTime:.55,blendTime:.12,
     zoomPerClick:1.35,zoomPerScroll:1.16,
     minZoomImageRatio:.78,maxZoomPixelRatio:64,
@@ -107,20 +112,9 @@ export default function Home(){
    viewer.current=v;
    v.addHandler("open",()=>{v.viewport.goHome(true);setZoom(v.viewport.getZoom(true));});
    v.addHandler("zoom",()=>setZoom(v.viewport.getZoom(true)));
-   // Hard-lock image translation. Zoom is allowed only through our UI controls.
-   const lockCenter=()=>{
-    if(!v.world.getItemCount())return;
-    const homeCenter=v.viewport.getHomeBounds().getCenter();
-    const current=v.viewport.getCenter(true);
-    if(Math.abs(current.x-homeCenter.x)>.000001||Math.abs(current.y-homeCenter.y)>.000001){
-     v.viewport.panTo(homeCenter,true);
-     v.viewport.applyConstraints(true);
-    }
-   };
-   v.addHandler("pan",lockCenter);
-   const blockDrag=e=>{e.preventDefault();e.stopPropagation();};
-   viewerEl.current.addEventListener("pointerdown",blockDrag,{capture:true});
-   viewerEl.current.addEventListener("pointermove",blockDrag,{capture:true});
+   // User navigation is fully disabled at the OpenSeadragon level.
+   // Zoom/pan remain available programmatically for our own controls and memory fly-to.
+
   })();
   return()=>{alive=false;viewer.current?.destroy();viewer.current=null;if(previewUrl.current)URL.revokeObjectURL(previewUrl.current)};
  },[]);
@@ -203,7 +197,7 @@ export default function Home(){
   }catch(e){}
  };
  return <main className="app">
-  <header className="topbar"><button className="brand brandLogo" onClick={home} aria-label="WE ARE SUPERSONICOS home"><strong>WE ARE</strong><span>SUPERSONICOS</span></button><div className="progress"><b>{memories.length.toLocaleString("en-US")}</b><span>/ 20,000 MEMORIES</span></div><nav><div className="languageSelector languageToggleStyle" aria-label="Language selector"><button className={lang==="es"?"active":""} onClick={()=>setLang("es")}>ES</button><span>/</span><button className={lang==="en"?"active":""} onClick={()=>setLang("en")}>EN</button></div><button onClick={home}>OVERVIEW</button><button onClick={showAbout}>ABOUT</button>{memories.length>0&&<button onClick={()=>openMemoryUrl(memories[memories.length-1])}>FIND MY MEMORY</button>}<button className="add" onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></nav>
+  <header className="topbar"><button className="brand brandLogo" onClick={home} aria-label="WE ARE SUPERSONICOS home"><strong>WE ARE</strong><span>SUPERSONICOS</span></button><div className="progress"><b>{memories.length.toLocaleString("en-US")}</b><span>/ 20,000 MEMORIES</span></div><nav><div className="languageSelector languageToggleStyle" aria-label="Language selector"><button className={lang==="es"?"active":""} onClick={()=>setLanguage("es")}>ES</button><span>/</span><button className={lang==="en"?"active":""} onClick={()=>setLanguage("en")}>EN</button></div><button onClick={home}>OVERVIEW</button><button onClick={showAbout}>ABOUT</button>{memories.length>0&&<button onClick={()=>openMemoryUrl(memories[memories.length-1])}>FIND MY MEMORY</button>}<button className="add" onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></nav>
    <div className="mobileNav"><button className="add" onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></div>
    {mobileMenu&&<div className="mobileMenu"><button onClick={()=>{setMobileMenu(false);home()}}>OVERVIEW</button><button onClick={()=>{setMobileMenu(false);showAbout()}}>ABOUT</button>{memories.length>0&&<button onClick={()=>{setMobileMenu(false);openMemoryUrl(memories[memories.length-1])}}>FIND MY MEMORY</button>}</div>}</header>
   <section className="viewport osdViewport" onPointerDown={dismissIntro}>
