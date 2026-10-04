@@ -104,24 +104,14 @@ export default function Home(){
     panHorizontal:false,panVertical:false
    });
    viewer.current=v;
-   // Keep the master fixed at home view. We block pan, but preserve explicit +/- zoom controls.
-   v.addHandler("canvas-drag",e=>{e.preventDefaultAction=true;v.viewport.goHome(true);});
-   v.addHandler("canvas-drag-end",e=>{e.preventDefaultAction=true;v.viewport.goHome(true);});
-   v.addHandler("canvas-scroll",e=>{e.preventDefaultAction=true;});
-   v.addHandler("canvas-double-click",e=>{e.preventDefaultAction=true;});
-   v.addHandler("open",()=>{
-    v.viewport.goHome(true);
-    v.gestureSettingsMouse.dragToPan=false;
-    v.gestureSettingsTouch.dragToPan=false;
-    setZoom(v.viewport.getZoom(true));
-   });
+   v.addHandler("open",()=>{v.viewport.goHome(true);setZoom(v.viewport.getZoom(true));});
    v.addHandler("zoom",()=>setZoom(v.viewport.getZoom(true)));
   })();
   return()=>{alive=false;viewer.current?.destroy();viewer.current=null;if(previewUrl.current)URL.revokeObjectURL(previewUrl.current)};
  },[]);
  useEffect(()=>{setMounted(true)},[]);
  const dismissIntro=()=>{setIntro(false)};
- const zoomBy=f=>{setIntro(false);const v=viewer.current;if(!v)return;const center=v.viewport.getHomeBounds().getCenter();v.viewport.zoomBy(f,center,true);v.viewport.panTo(center,true);v.viewport.applyConstraints();};
+ const zoomBy=f=>{setIntro(false);const v=viewer.current;if(!v)return;v.viewport.zoomBy(f);v.viewport.applyConstraints();};
  const home=()=>{viewer.current?.viewport.goHome();setSelected(null);setIntro(true);window.scrollTo({top:0,behavior:"smooth"})};
  const showAbout=()=>document.getElementById("about")?.scrollIntoView({behavior:"smooth",block:"start"});
  const chooseFile=e=>{
