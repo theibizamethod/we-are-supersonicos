@@ -743,3 +743,25 @@ body{background:#f7f7f4!important;color:#111!important}
 
 /* Master is explored only through explicit zoom controls; prevent mouse/touch panning */
 .deepViewer{pointer-events:none!important}
+
+
+/* Compact Participation Rules: same editorial design, less vertical air */
+@media(min-width:761px){
+ .participationRules{padding-top:46px;padding-bottom:28px}
+ .rulesHead{grid-template-columns:.78fr 1.45fr;gap:4vw;padding-bottom:22px}
+ .rulesHead p{margin-top:10px;line-height:1.4}
+ .rulesGrid article{padding-top:16px;padding-bottom:17px;min-height:98px}
+ .rulesGrid h3{margin:8px 0 4px}
+ .rulesGrid p{line-height:1.38}
+ .rulesLegal{margin-top:14px}
+ .participationRules + .faq{padding-top:34px!important}
+}
+@media(max-width:760px){
+ .participationRules{padding-top:40px;padding-bottom:28px}
+ .rulesHead{padding-bottom:20px}
+ .rulesHead>span{margin-bottom:12px}
+ .rulesHead h2{margin-bottom:12px}
+ .rulesGrid article,.rulesGrid article:nth-child(odd),.rulesGrid article:nth-child(even){padding:15px 0}
+ .rulesGrid h3{margin:7px 0 4px}
+ .rulesLegal{margin-top:14px}
+}
