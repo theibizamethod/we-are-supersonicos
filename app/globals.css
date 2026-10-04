@@ -740,3 +740,6 @@ body{background:#f7f7f4!important;color:#111!important}
  .faqHead h2{font-size:58px!important;letter-spacing:-3px!important}
  .faqItem>button{min-height:66px!important;font-size:12px!important;text-align:left!important}
 }
+
+/* Master is explored only through explicit zoom controls; prevent mouse/touch panning */
+.deepViewer{pointer-events:none!important}
