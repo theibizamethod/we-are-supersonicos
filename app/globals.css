@@ -787,3 +787,16 @@ body{background:#f7f7f4!important;color:#111!important}
  .rulesGrid p{font-size:13px!important;line-height:1.42!important}
  .rulesLegal{margin-top:16px!important}
 }
+
+
+/* Participation Rules — tighter editorial composition */
+@media(min-width:761px){
+ .participationRules{padding-top:34px!important;padding-bottom:42px!important}
+ .rulesHead{grid-template-columns:minmax(220px,.72fr) minmax(520px,1.28fr)!important;grid-template-rows:auto auto!important;column-gap:clamp(36px,6vw,90px)!important;row-gap:14px!important;padding-bottom:24px!important}
+ .rulesHead>span{grid-column:1!important;grid-row:1 / span 2!important;padding-top:7px!important}
+ .rulesHead h2{grid-column:2!important;grid-row:1!important;margin:0!important}
+ .rulesIntro{grid-column:2!important;grid-row:2!important;margin:0!important}
+ .rulesGrid article,.rulesGrid article:nth-child(n){padding:17px 22px 18px!important;min-height:112px!important}
+ .rulesGrid article:nth-child(7){min-height:98px!important}
+ .rulesGrid article>span{width:25px!important;height:25px!important;margin-bottom:12px!important}
+}
