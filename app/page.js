@@ -192,7 +192,7 @@ export default function Home(){
    <div className="mobileNav"><button className="add" onClick={()=>setOpen(true)}>ADD YOUR MEMORY <b>→</b></button></div>
    {mobileMenu&&<div className="mobileMenu"><button onClick={()=>{setMobileMenu(false);home()}}>OVERVIEW</button><button onClick={()=>{setMobileMenu(false);showAbout()}}>ABOUT</button>{memories.length>0&&<button onClick={()=>{setMobileMenu(false);openMemoryUrl(memories[memories.length-1])}}>FIND MY MEMORY</button>}</div>}</header>
   <section className="viewport osdViewport" onPointerDown={dismissIntro}>
-   <div ref={viewerEl} className="deepViewer"/>
+   <div ref={viewerEl} className="deepViewer" onPointerDown={e=>e.preventDefault()} onDragStart={e=>e.preventDefault()}/>
    <div className={"mosaicGuide "+(zoom>7?"visible":"")}/>
    <div className={"intro "+(!intro?"hidden":"")}><p>A COLLECTIVE MEMORY PROJECT</p><h1>20 YEARS.<br/>20,000 MEMORIES.<br/>ONE SOUND.</h1><h2>Every memory finds its place.</h2><div className="counter"><strong>{memories.length.toLocaleString("en-US")} / 20,000</strong><span>{memories.length===0?<>The first memory<br/>is waiting.</>:<>Every memory<br/>finds its place.</>}</span><i/></div><button className="enter" onClick={()=>zoomBy(1.35)}>EXPLORE THE IMAGE ↓</button></div>
    <div className="zoom" onPointerDown={e=>e.stopPropagation()}><button onClick={()=>zoomBy(1.22)}>+</button><span>{zoom<10?Math.round(zoom*100)+"%":zoom.toFixed(1)+"×"}</span><button onClick={()=>zoomBy(1/1.22)}>−</button></div>
