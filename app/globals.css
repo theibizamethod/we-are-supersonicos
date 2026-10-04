@@ -639,3 +639,104 @@ body{background:#f7f7f4!important;color:#111!important}
 
 /* Remove legacy floating language selector. Header selector remains. */
 .languageToggle{display:none!important}
+
+
+/* 2026-10-04 — refined lower-page design */
+.participationRules{
+ background:#090909!important;color:#f7f7f4!important;
+ padding:110px clamp(28px,5.5vw,110px) 120px!important;
+ border:0!important;
+}
+.rulesHead{
+ display:grid!important;grid-template-columns:minmax(260px,.8fr) minmax(420px,1.2fr)!important;
+ gap:clamp(48px,8vw,140px)!important;align-items:end!important;
+ padding:0 0 72px!important;border:0!important;
+}
+.rulesHead>span{
+ color:#ffd400!important;font-size:10px!important;letter-spacing:2.4px!important;
+ align-self:start!important;padding-top:9px!important;
+}
+.rulesHead h2{
+ color:#f7f7f4!important;font-size:clamp(38px,4.1vw,68px)!important;
+ line-height:.92!important;letter-spacing:-2.5px!important;font-weight:600!important;
+ margin:0!important;
+}
+.rulesHead p{
+ color:#a9a9a4!important;font-size:16px!important;line-height:1.6!important;
+ max-width:580px!important;margin:0!important;grid-column:2!important;
+}
+.rulesGrid{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:14px!important;border:0!important;
+}
+.rulesGrid article,.rulesGrid article:nth-child(n){
+ position:relative!important;background:#121212!important;border:1px solid #242424!important;
+ border-radius:18px!important;padding:30px 32px 34px!important;min-height:190px!important;
+}
+.rulesGrid article:nth-child(7){grid-column:1 / -1!important;min-height:150px!important}
+.rulesGrid article>span{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ width:32px!important;height:32px!important;border:1px solid #3a3a36!important;border-radius:50%!important;
+ color:#ffd400!important;font-size:10px!important;letter-spacing:0!important;margin-bottom:34px!important;
+}
+.rulesGrid h3{
+ color:#f7f7f4!important;font-size:15px!important;line-height:1.15!important;
+ letter-spacing:.02em!important;font-weight:700!important;margin:0 0 12px!important;
+}
+.rulesGrid p{
+ color:#969691!important;font-size:14px!important;line-height:1.55!important;
+ max-width:520px!important;margin:0!important;
+}
+.rulesLegal{
+ color:#777!important;font-size:11px!important;line-height:1.5!important;
+ margin:28px 0 0!important;max-width:760px!important;
+}
+.faq{
+ background:#f7f7f4!important;color:#0a0a0a!important;
+ padding:120px clamp(28px,5.5vw,110px) 130px!important;
+}
+.faqHead{
+ display:grid!important;grid-template-columns:minmax(220px,.65fr) 1.35fr!important;
+ gap:clamp(40px,8vw,140px)!important;align-items:start!important;
+ margin:0 0 58px!important;
+}
+.faqHead>span{
+ color:#777!important;font-size:10px!important;letter-spacing:2.2px!important;padding-top:11px!important;
+}
+.faqHead h2{
+ color:#0a0a0a!important;font-size:clamp(54px,6vw,92px)!important;
+ line-height:.85!important;letter-spacing:-4px!important;font-weight:600!important;margin:0!important;
+}
+.faqItem,.faqItem:nth-child(even),.faqItem:last-child{
+ background:transparent!important;border:0!important;border-top:1px solid #d9d9d3!important;
+ max-width:none!important;
+}
+.faqItem:last-child{border-bottom:1px solid #d9d9d3!important}
+.faqItem>button{
+ min-height:72px!important;padding:0 8px!important;color:#111!important;
+ font-size:13px!important;letter-spacing:.035em!important;font-weight:700!important;
+}
+.faqItem>button b{
+ width:30px!important;height:30px!important;border:1px solid #c8c8c2!important;border-radius:50%!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;font-size:16px!important;
+}
+.faqAnswer{padding:0 8px 28px!important}
+.faqAnswer p{
+ color:#666!important;font-size:15px!important;line-height:1.65!important;
+ max-width:760px!important;margin:0!important;
+}
+@media(max-width:760px){
+ .participationRules{padding:72px 22px 78px!important}
+ .rulesHead{display:block!important;padding-bottom:42px!important}
+ .rulesHead>span{display:block!important;margin-bottom:26px!important}
+ .rulesHead p{margin-top:26px!important}
+ .rulesGrid{grid-template-columns:1fr!important}
+ .rulesGrid article:nth-child(7){grid-column:auto!important}
+ .rulesGrid article,.rulesGrid article:nth-child(n){min-height:0!important;padding:26px!important}
+ .rulesGrid article>span{margin-bottom:26px!important}
+ .faq{padding:78px 22px 88px!important}
+ .faqHead{display:block!important;margin-bottom:42px!important}
+ .faqHead>span{display:block!important;margin-bottom:28px!important}
+ .faqHead h2{font-size:58px!important;letter-spacing:-3px!important}
+ .faqItem>button{min-height:66px!important;font-size:12px!important;text-align:left!important}
+}
