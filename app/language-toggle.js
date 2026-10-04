@@ -49,7 +49,13 @@ function walk(root,lang){
 }
 export default function LanguageToggle(){
  const [lang,setLang]=useState("en");
- useEffect(()=>{const saved=localStorage.getItem("supersonicos-lang")||"en";setLang(saved)},[]);
+ useEffect(()=>{
+  const saved=localStorage.getItem("supersonicos-lang")||"en";
+  setLang(saved);
+  const sync=e=>{if(e.detail==="en"||e.detail==="es")setLang(e.detail)};
+  window.addEventListener("supersonicos-language",sync);
+  return()=>window.removeEventListener("supersonicos-language",sync);
+ },[]);
  useEffect(()=>{walk(document.body,lang);localStorage.setItem("supersonicos-lang",lang);const o=new MutationObserver(()=>walk(document.body,lang));o.observe(document.body,{childList:true,subtree:true});return()=>o.disconnect()},[lang]);
  return <div className="languageToggle" aria-label="Language"><button className={lang==="en"?"active":""} onClick={()=>setLang("en")}>EN</button><span>/</span><button className={lang==="es"?"active":""} onClick={()=>setLang("es")}>ES</button></div>
 }
