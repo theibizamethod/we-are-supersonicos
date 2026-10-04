@@ -11,7 +11,7 @@ export default function Home(){
  const [file,setFile]=useState(null),[preview,setPreview]=useState(null),[name,setName]=useState(""),[year,setYear]=useState(""),[result,setResult]=useState(null),[error,setError]=useState(""),[saving,setSaving]=useState(false),[photoFocus,setPhotoFocus]=useState(null);
  const [memories,setMemories]=useState([]),[passport,setPassport]=useState(null),[checkout,setCheckout]=useState(false),[mobileMenu,setMobileMenu]=useState(false),[rulesAccepted,setRulesAccepted]=useState(false),[lang,setLang]=useState("en"),[mounted,setMounted]=useState(false);
  const ES={
-  "MEMORIES":"MEMORIAS","OVERVIEW":"INICIO","ABOUT":"ACERCA DE","FIND MY MEMORY":"ENCUENTRA MI MEMORIA","ADD YOUR MEMORY":"AÑADE TU MEMORIA",
+  "MEMORIES":"MEMORIAS","OVERVIEW":"INICIO","ABOUT":"ACERCA DE","FIND MY MEMORY":"ENCUENTRA MI MEMORIA","ADD YOUR MEMORY":"AÑADE TU MEMORIA","Participation Rules":"Normas de participación","Terms of Participation":"Términos de participación","Privacy Policy":"Política de privacidad",
   "A COLLECTIVE MEMORY PROJECT":"UN PROYECTO DE MEMORIA COLECTIVA","20 YEARS.":"20 AÑOS.","20,000 MEMORIES.":"20.000 MEMORIAS.","ONE SOUND.":"UN SONIDO.",
   "Every memory finds its place.":"Cada memoria encuentra su lugar.","The first memory":"La primera memoria","is waiting.":"está esperando.","Every memory":"Cada memoria","finds its place.":"encuentra su lugar.",
   "EXPLORE THE IMAGE ↓":"EXPLORA LA IMAGEN ↓","SCROLL TO ZOOM":"SCROLL PARA AMPLIAR","PINCH TO ZOOM":"PELLIZCA PARA AMPLIAR",
