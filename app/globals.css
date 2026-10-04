@@ -800,3 +800,23 @@ body{background:#f7f7f4!important;color:#111!important}
  .rulesGrid article:nth-child(7){min-height:98px!important}
  .rulesGrid article>span{width:25px!important;height:25px!important;margin-bottom:12px!important}
 }
+
+
+/* FAQ — compact Sonica editorial rhythm */
+@media(min-width:761px){
+ .faq{padding:58px clamp(28px,5.5vw,110px) 72px!important}
+ .faqHead{grid-template-columns:minmax(220px,.72fr) minmax(520px,1.28fr)!important;gap:clamp(36px,6vw,90px)!important;align-items:start!important;margin:0 0 28px!important}
+ .faqHead>span{padding-top:8px!important}
+ .faqHead h2{font-size:clamp(46px,4.7vw,72px)!important;line-height:.9!important;letter-spacing:-3px!important}
+ .faqItem>button{min-height:58px!important;padding:0 8px!important;font-size:12px!important}
+ .faqItem>button b{width:27px!important;height:27px!important;font-size:14px!important}
+ .faqAnswer{padding:0 8px 20px!important}
+ .faqAnswer p{font-size:14px!important;line-height:1.5!important}
+}
+@media(max-width:760px){
+ .faq{padding:52px 22px 64px!important}
+ .faqHead{margin-bottom:26px!important}
+ .faqHead>span{margin-bottom:16px!important}
+ .faqHead h2{font-size:50px!important;letter-spacing:-2.5px!important}
+ .faqItem>button{min-height:58px!important}
+}
