@@ -79,6 +79,16 @@ Object.assign(ES,{
 "YOUR PRIVACY.":"TU PRIVACIDAD.","We use optional analytics to understand how WE ARE SUPERSONICOS is used. You can accept or reject analytics. Essential technologies remain active.":"Utilizamos analítica opcional para comprender cómo se utiliza WE ARE SUPERSONICOS. Puedes aceptar o rechazarla. Las tecnologías esenciales permanecen activas.",
 "Cookie Policy":"Política de cookies","REJECT":"RECHAZAR","ACCEPT":"ACEPTAR","COOKIE SETTINGS.":"CONFIGURACIÓN DE COOKIES.","COOKIE SETTINGS":"CONFIGURACIÓN DE COOKIES"
 });
+Object.assign(ES,{
+"Contact:":"Contacto:",
+"You may request access, rectification, erasure, restriction, portability or objection where applicable, and withdraw consent where processing is based on consent. Contact ":"Puedes solicitar acceso, rectificación, supresión, limitación, portabilidad u oposición cuando corresponda, y retirar el consentimiento cuando el tratamiento se base en él. Contacta con ",
+". You may also lodge a complaint with the Spanish Data Protection Agency.":". También puedes presentar una reclamación ante la Agencia Española de Protección de Datos.",
+"The project is operated by Sonica Broadcast 5.0 SL, NIF / CIF B57754228. Contact: ":"El proyecto está operado por Sonica Broadcast 5.0 SL, NIF / CIF B57754228. Contacto: ",
+"Email ":"Escribe a ",
+" with the subject “WE ARE SUPERSONICOS · Removal request”. Include the Memory number or URL, the reason for the request and enough information for us to understand and, where necessary, verify your connection to the content.":" con el asunto «WE ARE SUPERSONICOS · Solicitud de retirada». Incluye el número o URL de la Memoria, el motivo de la solicitud y suficiente información para que podamos comprender y, cuando sea necesario, verificar tu relación con el contenido.",
+"Analytics is currently ":"La analítica está actualmente ",
+"accepted":"aceptada","rejected":"rechazada",". You can change your choice at any time.":". Puedes cambiar tu elección en cualquier momento."
+});
 const originals=new WeakMap();
 function walk(root,lang){
  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
