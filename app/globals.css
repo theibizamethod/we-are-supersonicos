@@ -765,3 +765,5 @@ body{background:#f7f7f4!important;color:#111!important}
  .rulesGrid h3{margin:7px 0 4px}
  .rulesLegal{margin-top:14px}
 }
+
+.rulesIntro{grid-column:2;margin-top:10px;max-width:680px}.rulesIntro p{margin:0 0 9px!important}.rulesIntro p:last-child{margin-bottom:0!important}.rulesIntro strong{color:#101722;font-weight:600}@media(max-width:760px){.rulesIntro{margin-top:0}.rulesIntro p{margin-bottom:8px!important}}
