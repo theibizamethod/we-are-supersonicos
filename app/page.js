@@ -106,6 +106,20 @@ export default function Home(){
    viewer.current=v;
    v.addHandler("open",()=>{v.viewport.goHome(true);setZoom(v.viewport.getZoom(true));});
    v.addHandler("zoom",()=>setZoom(v.viewport.getZoom(true)));
+   // Hard-lock image translation. Zoom is allowed only through our UI controls.
+   const lockCenter=()=>{
+    if(!v.world.getItemCount())return;
+    const homeCenter=v.viewport.getHomeBounds().getCenter();
+    const current=v.viewport.getCenter(true);
+    if(Math.abs(current.x-homeCenter.x)>.000001||Math.abs(current.y-homeCenter.y)>.000001){
+     v.viewport.panTo(homeCenter,true);
+     v.viewport.applyConstraints(true);
+    }
+   };
+   v.addHandler("pan",lockCenter);
+   const blockDrag=e=>{e.preventDefault();e.stopPropagation();};
+   viewerEl.current.addEventListener("pointerdown",blockDrag,{capture:true});
+   viewerEl.current.addEventListener("pointermove",blockDrag,{capture:true});
   })();
   return()=>{alive=false;viewer.current?.destroy();viewer.current=null;if(previewUrl.current)URL.revokeObjectURL(previewUrl.current)};
  },[]);
