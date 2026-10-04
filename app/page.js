@@ -36,6 +36,7 @@ export default function Home(){
   "YOUR PHOTO":"TU FOTO","YOUR NAME":"TU NOMBRE","YEAR OF THIS MEMORY":"AÑO DE ESTA MEMORIA","Choose a photograph":"Elige una fotografía","Your name":"Tu nombre","Your year":"Tu año","FIND MY PLACE":"ENCUENTRA MI LUGAR","ONE PHOTO. ONE MEMORY. ONE PLACE.":"UNA FOTO. UNA MEMORIA. UN LUGAR.","YOUR PLACE HAS BEEN FOUND":"TU LUGAR HA SIDO ENCONTRADO","VIEW MY MEMORY":"VER MI MEMORIA","YOUR PLACE IN THE ARTWORK":"TU LUGAR EN LA OBRA","ADD MY MEMORY":"AÑADIR MI MEMORIA","PASSPORT":"PASSPORT","SHARE":"COMPARTIR","SHARE PASSPORT":"COMPARTIR PASSPORT","MEMORY":"MEMORIA"
  };
  const EN=Object.fromEntries(Object.entries(ES).map(([en,es])=>[es,en]));
+ const t=s=>lang==="es"?(ES[s]||s):s;
  useEffect(()=>{
   if(typeof document==="undefined")return;
   document.documentElement.lang=lang;
