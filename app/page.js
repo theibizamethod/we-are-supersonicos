@@ -2,8 +2,8 @@
 import {useEffect,useRef,useState} from "react";
 import {createPortal} from "react-dom";
 import {formatMemoryNumber,prototypePlacement} from "../lib/memory-engine";
-const SUPABASE_URL=""; // isolated until SUPERSONICOS Supabase is connected
-const SUPABASE_KEY=""; // isolated until SUPERSONICOS Supabase is connected
+const SUPABASE_URL="https://yiflmsubkrlwhweenvca.supabase.co"; // SUPERSONICOS / ibiza-i-was-here
+const SUPABASE_KEY="sb_publishable_dhZvmnCkAjySaNgKeQESng_pSjLhE91"; // publishable client key
 const MASTER="/sonica_master.png";
 export default function Home(){
  const viewerEl=useRef(null), viewer=useRef(null), previewUrl=useRef(null);
