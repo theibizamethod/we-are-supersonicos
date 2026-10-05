@@ -132,7 +132,7 @@ export default function Home(){
   const sync=()=>{
    const z=v.viewport.getZoom(true);
    liveOverlays.current.forEach(el=>{
-    el.classList.toggle("memoryTileVisible",z>=7);
+    el.classList.toggle("memoryTileVisible",z>=1);
     el.classList.toggle("memoryTileClose",z>=16);
    });
   };
