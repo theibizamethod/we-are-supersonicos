@@ -269,8 +269,8 @@ export default function Home(){
   ctx.font='600 13px Inter, Arial, sans-serif';ctx.fillStyle="#5e6266";ctx.fillText("SUPERSONICOS.IBIZASONICA.COM",70,111);
   const img=new Image();img.crossOrigin="anonymous";
   await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=m.photo});
-  const imageY=150,imageH=560,scale=Math.max(W/img.width,imageH/img.height),sw=W/scale,sh=imageH/scale,focusX=m.focus?.x??.5,focusY=m.focus?.y??.5,sx=Math.max(0,Math.min(img.width-sw,img.width*focusX-sw/2)),sy=Math.max(0,Math.min(img.height-sh,img.height*focusY-sh/2));
-  ctx.drawImage(img,sx,sy,sw,sh,0,imageY,W,imageH);
+  const imageY=150,imageH=560,scale=Math.min(W/img.width,imageH/img.height),dw=img.width*scale,dh=img.height*scale,dx=(W-dw)/2,dy=imageY+(imageH-dh)/2;
+  ctx.fillStyle="#f3f4f7";ctx.fillRect(0,imageY,W,imageH);ctx.drawImage(img,dx,dy,dw,dh);
   ctx.fillStyle="#101722";
   ctx.font='700 26px Inter, Arial, sans-serif';ctx.fillText("20 YEARS. 20,000 MEMORIES.",70,745);
   ctx.font='500 22px Inter, Arial, sans-serif';ctx.fillStyle="#5e6266";ctx.fillText("ONE SOUND.",70,783);
