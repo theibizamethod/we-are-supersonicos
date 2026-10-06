@@ -81,7 +81,7 @@
 .placementResult{display:flex;flex-direction:column;gap:14px}
 .placementResult>small{letter-spacing:1.8px;font-weight:700}
 .placementResult h2{margin:0}
-.placementResult>img{width:100%;height:220px;object-fit:cover;border-radius:12px}
+.placementResult>img{width:100%;height:220px;object-fit:contain;background:#f3f4f7;border-radius:12px}
 .placementResult>p{margin:2px 0 0;font-size:15px;line-height:1.45}
 .placementResult>strong{font-size:22px;letter-spacing:.5px}
 .placementResult>span{font-size:12px;letter-spacing:1px}
@@ -102,7 +102,7 @@
 .passportClose{position:absolute;right:16px;top:16px;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:#f6f3ec;font-size:22px;cursor:pointer}
 .passportTop{height:58px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;font-size:8px;letter-spacing:1.8px}
 .passportTop b{font-size:8px}
-.passport>img{width:100%;height:260px;display:block;object-fit:cover}
+.passport>img{width:100%;height:260px;display:block;object-fit:contain;background:#f3f4f7}
 .passportBody{padding:25px 25px 27px}
 .passportBody small{font-size:7px;letter-spacing:1.5px;font-weight:700}
 .passportBody h2{font-size:62px;line-height:.84;letter-spacing:-4px;margin:22px 0 24px;font-weight:400}
