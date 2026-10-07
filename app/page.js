@@ -160,7 +160,7 @@ export default function Home(){
     zoomPerClick:1.35,zoomPerScroll:1.16,
     minZoomImageRatio:.78,maxZoomPixelRatio:64,
     visibilityRatio:.65,constrainDuringPan:true,homeFillsViewer:false,
-    gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:false,dragToPan:false,scrollToZoom:false},
+    gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:false,dragToPan:true,scrollToZoom:false},
     gestureSettingsTouch:{pinchToZoom:true,dragToPan:true},
    });
    viewer.current=v;
