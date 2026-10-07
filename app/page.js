@@ -138,7 +138,7 @@ export default function Home(){
   };
   sync();v.addHandler("zoom",sync);
   return()=>v.removeHandler("zoom",sync);
- },[memories]);
+ },[memories,zoom]);
  useEffect(()=>{
   let alive=true;
   (async()=>{
