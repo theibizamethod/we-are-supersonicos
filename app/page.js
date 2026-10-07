@@ -235,7 +235,11 @@ export default function Home(){
   v.viewport.panTo(point);
   v.viewport.zoomTo(Math.max(v.viewport.getZoom(),20),point);
   v.viewport.applyConstraints();
-  window.setTimeout(()=>setSelected(m),650);
+  window.setTimeout(()=>{
+   const el=liveOverlays.current.get(m.slug);
+   if(el){el.classList.add("memoryTileVisible","memoryTileClose","memoryTileFocus");}
+   setSelected(m);
+  },650);
  };
  useEffect(()=>{
   if(!pendingSlug.current||!memories.length||!viewer.current||!viewerReady.current||!viewer.current.world.getItemAt(0))return;
