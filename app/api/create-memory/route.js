@@ -32,7 +32,7 @@ export async function POST(request){
     const memoryNo=String(d.memory.memory_number).padStart(6,"0");
     const memoryUrl="https://supersonicos.ibizasonica.com/memory/"+d.memory.public_slug;
     try{
-     const ml=await fetch("https://connect.mailerlite.com/api/subscribers",{method:"POST",headers:{Authorization:"Bearer "+process.env.MAILERLITE_API_TOKEN,"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({email,fields:{name:String(form.get("name")||"").trim(),supersonicos_memory:"#"+memoryNo,supersonicos_url:memoryUrl},groups:[MAILERLITE_GROUP_ID]}),cache:"no-store"});
+     const ml=await fetch("https://connect.mailerlite.com/api/subscribers",{method:"POST",headers:{Authorization:"Bearer "+process.env.MAILERLITE_API_TOKEN,"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({email,fields:{name:String(form.get("name")||"").trim(),supersonicos_memory:"#"+memoryNo,supersonicos_url:memoryUrl,supersonicos_language:String(form.get("language")||"en")==="es"?"es":"en"},groups:[MAILERLITE_GROUP_ID]}),cache:"no-store"});
      if(!ml.ok)console.error("MailerLite subscriber sync failed",ml.status);
     }catch(e){console.error("MailerLite subscriber sync failed",e)}
    }
