@@ -149,20 +149,18 @@ export default function Home(){
     element:viewerEl.current,
     tileSources:{type:"image",url:MASTER,buildPyramid:true},
     showNavigationControl:false,showNavigator:false,
-    mouseNavEnabled:false,
+    mouseNavEnabled:true,
     animationTime:.55,blendTime:.12,
     zoomPerClick:1.35,zoomPerScroll:1.16,
     minZoomImageRatio:.78,maxZoomPixelRatio:64,
     visibilityRatio:.65,constrainDuringPan:true,homeFillsViewer:false,
     gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:false,dragToPan:false,scrollToZoom:false},
-    gestureSettingsTouch:{pinchToZoom:false,dragToPan:false},
-    panHorizontal:false,panVertical:false
+    gestureSettingsTouch:{pinchToZoom:true,dragToPan:true},
    });
    viewer.current=v;
    v.addHandler("open",()=>{v.viewport.goHome(true);setZoom(v.viewport.getZoom(true));});
    v.addHandler("zoom",()=>setZoom(v.viewport.getZoom(true)));
-   // User navigation is fully disabled at the OpenSeadragon level.
-   // Zoom/pan remain available programmatically for our own controls and memory fly-to.
+   // Touch navigation stays enabled so mobile visitors can inspect memories naturally.
 
   })();
   return()=>{alive=false;viewer.current?.destroy();viewer.current=null;if(previewUrl.current)URL.revokeObjectURL(previewUrl.current)};
