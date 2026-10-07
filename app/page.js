@@ -98,7 +98,7 @@ export default function Home(){
    window.dispatchEvent(new CustomEvent("supersonicos-language",{detail:next}));
   }
  };
- const liveOverlays=useRef(new Map()),pendingSlug=useRef(null);
+ const liveOverlays=useRef(new Map()),pendingSlug=useRef(null),viewerReady=useRef(false);
  useEffect(()=>{
   if(typeof window!=="undefined"){
    const match=window.location.pathname.match(/^\/memory\/([^/]+)\/?$/);
@@ -158,7 +158,7 @@ export default function Home(){
     gestureSettingsTouch:{pinchToZoom:true,dragToPan:true},
    });
    viewer.current=v;
-   v.addHandler("open",()=>{v.viewport.goHome(true);setZoom(v.viewport.getZoom(true));});
+   v.addHandler("open",()=>{viewerReady.current=true;v.viewport.goHome(true);setZoom(v.viewport.getZoom(true));});
    v.addHandler("zoom",()=>setZoom(v.viewport.getZoom(true)));
    // Touch navigation stays enabled so mobile visitors can inspect memories naturally.
 
@@ -238,12 +238,12 @@ export default function Home(){
   window.setTimeout(()=>setSelected(m),650);
  };
  useEffect(()=>{
-  if(!pendingSlug.current||!memories.length||!viewer.current)return;
+  if(!pendingSlug.current||!memories.length||!viewer.current||!viewerReady.current||!viewer.current.world.getItemAt(0))return;
   const target=memories.find(m=>m.slug===pendingSlug.current||String(Number(m.num))===pendingSlug.current||m.num===pendingSlug.current);
   if(!target)return;
   pendingSlug.current=null;
   window.setTimeout(()=>flyToMemory(target),350);
- },[memories]);
+ },[memories,zoom]);
  const openMemoryUrl=m=>{
   if(typeof window!=="undefined")window.history.pushState({},"","/memory/"+m.slug);
   flyToMemory(m);
