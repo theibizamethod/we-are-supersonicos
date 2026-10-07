@@ -1,6 +1,7 @@
 export const runtime="nodejs";
 const PAYPAL_BASE="https://api-m.paypal.com";
-const SUPABASE_URL="https://yiflmsubkrlwhweenvca.supabase.co";\nconst MAILERLITE_GROUP_ID="200657218546173573";
+const SUPABASE_URL="https://yiflmsubkrlwhweenvca.supabase.co";
+const MAILERLITE_GROUP_ID="200657218546173573";
 
 async function paypalToken(){
  const id=process.env.PAYPAL_CLIENT_ID,secret=process.env.PAYPAL_CLIENT_SECRET;
