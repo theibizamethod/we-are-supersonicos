@@ -136,7 +136,13 @@ export default function Home(){
     el.classList.toggle("memoryTileClose",z>=16);
    });
   };
-  sync();v.addHandler("zoom",sync);
+  sync();
+  // Overlays added after the master image opens are not always painted until
+  // OpenSeadragon receives another viewport event. Force the first paint so a
+  // direct /memory/:slug link never needs a manual +/- zoom to reveal its tile.
+  v.forceRedraw();
+  requestAnimationFrame(()=>{sync();v.forceRedraw();});
+  v.addHandler("zoom",sync);
   return()=>v.removeHandler("zoom",sync);
  },[memories,zoom]);
  useEffect(()=>{
@@ -235,9 +241,14 @@ export default function Home(){
   v.viewport.panTo(point);
   v.viewport.zoomTo(Math.max(v.viewport.getZoom(),20),point);
   v.viewport.applyConstraints();
+  // A direct memory URL can focus before the overlay has had its first paint.
+  // Repaint immediately and again after the zoom animation completes.
+  v.forceRedraw();
+  requestAnimationFrame(()=>v.forceRedraw());
   window.setTimeout(()=>{
    const el=liveOverlays.current.get(m.slug);
    if(el){el.classList.add("memoryTileVisible","memoryTileClose","memoryTileFocus");}
+   v.forceRedraw();
    setSelected(m);
   },650);
  };
