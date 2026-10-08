@@ -87,7 +87,7 @@ export default function Home(){
   if(typeof window==="undefined")return;
   const saved=localStorage.getItem("supersonicos-lang");
    const preferred=(navigator.languages||[navigator.language||"en"]).some(code=>/^es(?:-|$)/i.test(code))?"es":"en";
-  setLang(saved);
+  setLang(saved==="es"||saved==="en"?saved:preferred);
   const sync=e=>{if(e.detail==="en"||e.detail==="es")setLang(e.detail)};
   window.addEventListener("supersonicos-language",sync);
   return()=>window.removeEventListener("supersonicos-language",sync);
