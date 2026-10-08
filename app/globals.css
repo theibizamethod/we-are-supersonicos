@@ -845,3 +845,6 @@ body{background:#f7f7f4!important;color:#111!important}
  .topbar .headerSonicaLogo{height:32px;max-width:54px}
  .topbar .headerIdentityDivider{height:27px}
 }
+
+/* Keep the master artwork visible if OpenSeadragon is slow or fails on mobile */
+.osdViewport .masterFallback{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:3;pointer-events:none}
