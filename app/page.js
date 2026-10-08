@@ -85,7 +85,8 @@ export default function Home(){
  const t=s=>lang==="es"?(ES[s]||s):s;
  useEffect(()=>{
   if(typeof window==="undefined")return;
-  const saved=localStorage.getItem("supersonicos-lang")||"en";
+  const saved=localStorage.getItem("supersonicos-lang");
+   const preferred=(navigator.languages||[navigator.language||"en"]).some(code=>/^es(?:-|$)/i.test(code))?"es":"en";
   setLang(saved);
   const sync=e=>{if(e.detail==="en"||e.detail==="es")setLang(e.detail)};
   window.addEventListener("supersonicos-language",sync);
