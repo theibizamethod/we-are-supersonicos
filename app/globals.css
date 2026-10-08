@@ -829,3 +829,9 @@ body{background:#f7f7f4!important;color:#111!important}
  .topbar .brandLogo strong{font-size:10px;letter-spacing:1.5px}
  .topbar .brandLogo span{font-size:18px;letter-spacing:-.5px}
 }
+
+/* Header wordmark: equal visual hierarchy for both lines */
+.topbar .brandLogo strong,.topbar .brandLogo span{font-size:23px;font-weight:900;line-height:1;letter-spacing:-.75px}
+.topbar .brandLogo strong{color:#f5f5f2}
+.topbar .brandLogo span{color:#ffd400;margin-top:3px}
+@media(max-width:760px){.topbar .brandLogo strong,.topbar .brandLogo span{font-size:18px;letter-spacing:-.55px}}
