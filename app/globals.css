@@ -820,3 +820,12 @@ body{background:#f7f7f4!important;color:#111!important}
  .faqHead h2{font-size:50px!important;letter-spacing:-2.5px!important}
  .faqItem>button{min-height:58px!important}
 }
+
+
+/* Header wordmark — campaign alignment (2026-10-08) */
+.topbar .brandLogo strong{color:#f5f5f2;font-weight:900;font-size:12px;letter-spacing:1.9px;line-height:1}
+.topbar .brandLogo span{color:#ffd400;font-weight:900;font-size:23px;letter-spacing:-.75px;line-height:1;margin-top:4px}
+@media(max-width:760px){
+ .topbar .brandLogo strong{font-size:10px;letter-spacing:1.5px}
+ .topbar .brandLogo span{font-size:18px;letter-spacing:-.5px}
+}
