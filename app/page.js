@@ -317,7 +317,7 @@ export default function Home(){
    <div className="mobileNav"><button className="add" onClick={()=>setOpen(true)}>{t("ADD YOUR MEMORY")} <b>→</b></button></div>
    {mobileMenu&&<div className="mobileMenu"><button onClick={()=>{setMobileMenu(false);home()}}>{t("OVERVIEW")}</button><button onClick={()=>{setMobileMenu(false);showAbout()}}>{t("ABOUT")}</button>{memories.length>0&&<button onClick={()=>{setMobileMenu(false);openFindMemory()}}>{t("FIND MY MEMORY")}</button>}</div>}</header>
   <section className="viewport osdViewport" onPointerDown={dismissIntro}>
-   {!masterLoaded&&<img className="masterFallback" src={MASTER} alt="Ibiza Sonica collective mosaic" />}
+   <img className={"masterFallback "+(masterLoaded?"masterReady":"")} src={MASTER} alt="Ibiza Sonica collective mosaic" style={{transform:`scale(${Math.max(.5,zoom)})`}} />
    <div ref={viewerEl} className="deepViewer" onPointerDown={e=>e.preventDefault()} onDragStart={e=>e.preventDefault()}/>
    <div className={"mosaicGuide "+(zoom>7?"visible":"")}/>
    <div className={"intro "+(!intro?"hidden":"")}><p>{t("A COLLECTIVE MEMORY PROJECT")}</p><h1>{t("20 YEARS.")}<br/>{t("20,000 MEMORIES.")}<br/>{t("ONE SOUND.")}</h1><h2>{t("Every memory finds its place.")}</h2><div className="counter"><strong>{memories.length.toLocaleString("en-US")} / 20,000</strong><span>{memories.length===0?<>{t("The first memory")}<br/>{t("is waiting.")}</>:<>{t("Every memory")}<br/>{t("finds its place.")}</>}</span><i/></div><button className="enter" onClick={()=>zoomBy(1.35)}>{t("EXPLORE THE IMAGE ↓")}</button></div>
